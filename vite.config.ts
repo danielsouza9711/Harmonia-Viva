@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   // Carrega variáveis de ambiente baseadas no modo (development/production)
   // process.cwd() é usado para localizar o arquivo .env
+  // Cast process as any to avoid TypeScript errors in Node environment
   const env = loadEnv(mode, (process as any).cwd(), '');
   
   return {
